@@ -1,17 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDom from "react-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const header=<h1>This is my first react app</h1>//this is jsx code react.createElement() automatically call bihind the seen and pass into babel and then balbel convert jsx into plain js
+console.log(header,"header")//still it will show in virtual dom 
+ReactDom.render(header,document.getElementById('root'));//this will convert the virtual dom to real dom/browser dom
