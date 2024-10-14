@@ -2,8 +2,9 @@
     //usually we can`t write html in js file. so we have to write jsx .if we want to write html in js file then we have to wraap the html into duble quotes("")
     //babel will convert jsx onto plain js.because the browser dont understand the jsx
     
-    // const plainJs=document.createElement("<h1>")
-    // console.log(plainJs)
+    // let plainJs=document.createElement("h1")
+    // // console.log(plainJs)
+    // plainJs.textContent="hello pawan";
     // return plainJs;
 
     //advantage of jsx 

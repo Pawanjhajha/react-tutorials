@@ -7,4 +7,6 @@ const root=ReactDom.createRoot(document.getElementById('root'))
 root.render(<App/>)
 
 // let div=document.getElementById('root')
-// div.append(App())
+// const appData=App();
+// console.log(appData,"appData")
+// div.append(appData)
