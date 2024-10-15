@@ -1,19 +1,21 @@
+let productCount=0;
+function displayFormateProductCount(){
+    return productCount>0?productCount:'zero';
+}
 function Product(){
-    // return(
-    //     <>
-    //     <h1>All Products</h1>
-    //     </>
-    // )
-    // return <h1>All products</h1> <p>byy</p> this will give the error because behind the scean react.createElement() can create one element at a time 
-    //so solution of it we need to wrap the more than element into parent container ex. <div>,<>(fragemnet),<span>,now react.createElement() now the create <div> element .
-    //and div child element also created
+return(
+    <div>
+        <button className="btn btn-primary">-</button>
+        {/*<span>{productCount}</span>*/}
+        {/* we the curly brekit to print and js expression value in jsx */}
 
-    //and when we return more then one line we should warap in pranthises (())
+        <span>{displayFormateProductCount()}</span>{/* we have to call the function*/}
+        {/* we can write the jsx expression */}
+        {/* <span>{10+5}</span> */}
+        <button className="btn btn-primary">+</button>
 
-    return (<div>
-        <h1>all proudcts</h1>
-        <p>this is paragraph</p>
-    </div>)
+    </div>
+)
 }
 
 export default Product;
