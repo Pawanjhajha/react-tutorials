@@ -1,19 +1,13 @@
-let productCount=0;
-function displayFormateProductCount(){
-    return productCount>0?productCount:'zero';
-}
+import './product.css'
+let isAvailable='Avdfailable';
+//add two class on one element
+let badgeClass='badge-margin-left-40 badge ';
+// badgeClass += isAvailable==='Available'?'bg-success':'bg-danger'
+console.log(badgeClass)
 function Product(){
 return(
     <div>
-        <button className="btn btn-primary">-</button>
-        {/*<span>{productCount}</span>*/}
-        {/* we the curly brekit to print and js expression value in jsx */}
-
-        <span>{displayFormateProductCount()}</span>{/* we have to call the function*/}
-        {/* we can write the jsx expression */}
-        {/* <span>{10+5}</span> */}
-        <button className="btn btn-primary">+</button>
-
+        <span className={badgeClass}>{isAvailable}</span>
     </div>
 )
 }
