@@ -1,13 +1,14 @@
 import './product.css'
-let isAvailable='Avdfailable';
-//add two class on one element
+
+function Product(props){
 let badgeClass='badge-margin-left-40 badge ';
-// badgeClass += isAvailable==='Available'?'bg-success':'bg-danger'
-console.log(badgeClass)
-function Product(){
+badgeClass +=props.isAvailable?'bg-success':'bg-danger';
 return(
     <div>
-        <span className={badgeClass}>{isAvailable}</span>
+        <h6>{props.id}</h6>
+       <h1>{props.name}</h1>
+       <p>{props.desc}</p>
+       <span className={badgeClass}>{props.isAvailable?'Available':'UnAvailable'}</span>
     </div>
 )
 }
