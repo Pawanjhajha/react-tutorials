@@ -31,13 +31,14 @@ let productData=[
       <div className='container'>
          <div className='row'>
             <div className='col-lg-8 mx-auto'>
-               <Product id={productData[0].pid} name={productData[0].name} desc={productData[0].des} isAvailable={productData[0].isAvailable}></Product>
+               {/* <Product id={productData[0].pid} name={productData[0].name} desc={productData[0].des} isAvailable={productData[0].isAvailable}></Product>
                <hr></hr>
                <Product id={productData[1].pid} name={productData[1].name} desc={productData[1].des} isAvailable={productData[1].isAvailable} ></Product>
                <hr></hr>
                <Product id={productData[2].pid} name={productData[2].name} desc={productData[2].des} isAvailable={productData[2].isAvailable}></Product>
                <hr></hr>
-               <Product  id={productData[3].pid} name={productData[3].name} desc={productData[3].des} isAvailable={productData[3].isAvailable}></Product>
+               <Product  id={productData[3].pid} name={productData[3].name} desc={productData[3].des} isAvailable={productData[3].isAvailable}></Product> */}
+               <Product></Product>
             </div>
          </div>
       </div>
