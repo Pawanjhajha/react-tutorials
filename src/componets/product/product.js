@@ -11,7 +11,8 @@ return(
        <h1>{props.name}</h1>
        <p>{props.desc}</p>
        {/* <span className={badgeClass}>{props.isAvailable?'Available':'UnAvailable'}</span> */}
-       <ProductDetails isAvailable={props.isAvailable} cssClass={badgeClass}></ProductDetails>
+       <ProductDetails isAvailable={props.isAvailable} cssClass={badgeClass}>
+       </ProductDetails>
     </div>
 )
 }
