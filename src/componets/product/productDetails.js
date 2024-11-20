@@ -1,18 +1,22 @@
+import { useState } from "react";
 import Button from "./button";
 
+
 function ProductDetails(){
-    let productCount=0;
-    console.log(productCount,"product")
+    // let productCount=0;
+    let [productCount,updateProductCount]=useState(0);
+    console.log(productCount,"intial product count")
     function displayformatedProductCount(){
         console.log(productCount,"productcount")
         return productCount>0?productCount:'Zero';
     }
     function increment(){
-        productCount++;
+        updateProductCount(++productCount);
         console.log(productCount)
     }
     function deCreament(){
-        productCount--;
+        // SetProductCount(productCount--);
+        updateProductCount(--productCount);
         console.log(productCount)
     }
     return(
