@@ -1,30 +1,38 @@
 import { useState } from "react"
 
 function ProductForm(){
-    let [pName,updatePname]=useState('');
-    let[price,updatePrice]=useState(0);
-    let[desc,updateDesc]=useState('');
-    let[isAvailable,updateIsAvailable]=useState(false);
-    let[img,updateImg]=useState('');//this state will be store somewhere in the memory and all state is totaly defeerent to each other
+    let [userInput,updateUserInput]=useState({
+        pName:'',
+        price:0,
+        desc:'',
+        isAvailable:false,
+        img:''
+    });
+    console.log(userInput,"userInput")
     function nameInputHandler(event){
-        console.log("some text entered",event,event.target.value);
-        updatePname(event.target.value);
+        updateUserInput({
+            ...userInput,
+            pName:event.target.value});
     }
     function priceInputHandler(event){
-        console.log("some text entered",event,event.target.value);
-        updatePrice(event.target.value);
+        updateUserInput({
+            ...userInput,
+            price:event.target.value});
     }
     function descriptionInputHandler(event){
-        console.log("some text entered",event,event.target.value);
-        updateDesc(event.target.value);
+        updateUserInput({
+            ...userInput,
+            desc:event.target.value});
     }
     function isAvailableInputHandler(event){
-        console.log("some text entered",event,event.target.value);
-        updateIsAvailable(event.target.value);
+        updateUserInput({
+            ...userInput,
+            isAvailable:event.target.value});
     }
     function imageInputHandler(event){
-        console.log("some text entered",event,event.target.value);
-        updateImg(event.target.value);
+        updateUserInput({
+            ...userInput,
+            img:event.target.value})
     }
     return(
         <form className="row g-3">
