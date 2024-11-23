@@ -1,41 +1,41 @@
 import { useState } from "react"
 
 function ProductForm(){
-    let [userInput,updateUserInput]=useState({
-        pName:'',
-        price:0,
-        desc:'',
-        isAvailable:false,
-        img:''
-    });
-    console.log(userInput,"userInput")
+    let [pName,updatePname]=useState('');
+    let[price,updatePrice]=useState(0);
+    let[desc,updateDesc]=useState('');
+    let[isAvailable,updateIsAvailable]=useState(false);
+    let[img,updateImg]=useState('');//this state will be store somewhere in the memory and all state is totaly defeerent to each other
     function nameInputHandler(event){
-        updateUserInput({
-            ...userInput,
-            pName:event.target.value});
+        updatePname(event.target.value);
     }
     function priceInputHandler(event){
-        updateUserInput({
-            ...userInput,
-            price:event.target.value});
+        updatePrice(event.target.value);
     }
     function descriptionInputHandler(event){
-        updateUserInput({
-            ...userInput,
-            desc:event.target.value});
+        updateDesc(event.target.value);
     }
     function isAvailableInputHandler(event){
-        updateUserInput({
-            ...userInput,
-            isAvailable:event.target.value});
+        console.log(event.target.value,"isAvailable")
+        updateIsAvailable(event.target.value);
     }
     function imageInputHandler(event){
-        updateUserInput({
-            ...userInput,
-            img:event.target.value})
+        updateImg(event.target.value);
+    }
+    function createProductHandler(event){
+        event.preventDefault();
+        let Product={
+            pName:pName,
+            price:Number(price),
+            desc:desc,
+            Pid:1,
+            isAvailable:Boolean(isAvailable),
+            img:img
+        }
+        console.log(Product,"product")
     }
     return(
-        <form className="row g-3">
+        <form className="row g-3" onSubmit={createProductHandler}>
             <div className="col-md-6">
                 <label for='name'>ProductName</label>
                 <input type="text" className="form-control" id="name" onChange={nameInputHandler} placeholder="Product name"/>
