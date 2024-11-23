@@ -32,29 +32,35 @@ function ProductForm(){
             isAvailable:Boolean(isAvailable),
             img:img
         }
+        updatePname('');
+        updateDesc('');
+        updateImg('');
+        updatePrice(0);
+        updateIsAvailable(false);
+        //add product katre hi input field empty ho jayege
         console.log(Product,"product")
     }
     return(
         <form className="row g-3" onSubmit={createProductHandler}>
             <div className="col-md-6">
                 <label for='name'>ProductName</label>
-                <input type="text" className="form-control" id="name" onChange={nameInputHandler} placeholder="Product name"/>
+                <input type="text" className="form-control" id="name" value={pName} onChange={nameInputHandler} placeholder="Product name"/>
             </div>
             <div className="col-md-6">
                 <label for='price'>Product Price</label>
-                <input type="number" className="form-control" id="price"  onChange={priceInputHandler} placeholder="Product Price" min="0.01" step="0.01"/>
+                <input type="number" className="form-control" id="price" value={price} onChange={priceInputHandler} placeholder="Product Price" min="0.01" step="0.01"/>
             </div>
             <div className="form-group">
                 <label for='description'>Product Description</label>
-                <input type="text" className="form-control" id="description" onChange={descriptionInputHandler} placeholder="Product description"/>
+                <input type="text" className="form-control" id="description" value={desc} onChange={descriptionInputHandler} placeholder="Product description"/>
             </div>
             <div className="form-check form-switch">
-                <input type="checkBox" className="form-check-input" id="isAvailable" onChange={isAvailableInputHandler} role="switch"/>
+                <input type="checkBox" className="form-check-input" id="isAvailable" checked={isAvailable} onChange={isAvailableInputHandler} role="switch"/>
                 <label for='isAvailable' className="form-check-label"> The Product in stock</label>
             </div>
             <div className="form-group">
                 <label for="select-image">Select Product image</label>
-                <input type='file' className="form-control" onChange={imageInputHandler} id='select-image'/>
+                <input type='file' className="form-control" value={img} onChange={imageInputHandler} id='select-image'/>
             </div>
             <button type='submit'>ADD Product</button>
         </form>
