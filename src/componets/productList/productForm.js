@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function ProductForm(){
+function ProductForm(props){
     let [pName,updatePname]=useState('');
     let[price,updatePrice]=useState(0);
     let[desc,updateDesc]=useState('');
@@ -38,7 +38,8 @@ function ProductForm(){
         updatePrice(0);
         updateIsAvailable(false);
         //add product katre hi input field empty ho jayege
-        console.log(Product,"product")
+        // console.log(Product,"product")
+        props.createProduct(Product)
     }
     return(
         <form className="row g-3" onSubmit={createProductHandler}>
