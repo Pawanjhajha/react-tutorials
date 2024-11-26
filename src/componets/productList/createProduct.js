@@ -1,6 +1,7 @@
 import ProductForm from "./productForm";
 
 function CreateProduct(props){
+    
     function onCreateProduct(product){
         console.log(product,"create product")
         props.createProduct(product)

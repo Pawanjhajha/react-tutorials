@@ -25,7 +25,7 @@ function ProductForm(props){
     function createProductHandler(event){
         event.preventDefault();
         let Product={
-            pName:pName,
+            name:pName,
             price:Number(price),
             desc:desc,
             Pid:1,
