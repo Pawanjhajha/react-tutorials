@@ -39,18 +39,18 @@ function App() {
     }else if(filterTextVale==='unAvailable'){
       return product.isAvailable===false;
     }else{
-      return product;
+      return null;
     }
   })
 // updateNewProductList(props.newProduct,...productData)
   function createProduct(product){
-    console.log(product,"new Product")
+    // console.log(product,"new Product")
     // console.log(product,"app.js")
     // updateNewProduct(product)
     updateNewProductList([product,...newProductList])
   }
   function onfilterValueChange(filterValue){
-    console.log(filterValue,"filetValue in app.js")
+    // console.log(filterValue,"filetValue in app.js")
     updateFilterTextValue(filterValue);
   }
   return (
