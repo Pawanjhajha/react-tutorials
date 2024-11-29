@@ -7,7 +7,7 @@ function ProductList(props){
 
 return(
     <>
-    {props.newProduct?.map((product)=>(
+    {props.newProduct?.map((product,key)=>(
         <div>
               <h6>{product?.id}</h6>
        <h1>{product?.name}</h1>
