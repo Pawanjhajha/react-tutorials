@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import CreateProduct from './componets/productList/createProduct';
 import ProductList from './componets/productList/productList';
+import FilterProduct from './componets/filterProduct/filterProduct';
 let productData=[
   {
      pid:1,
@@ -31,6 +32,16 @@ let productData=[
 ]
 function App() {
   let [newProductList,updateNewProductList]=useState(productData);
+  let [filterTextVale,updateFilterTextValue]=useState('All');
+  let filterProduct=newProductList.filter((product)=>{
+    if(filterTextVale==='available'){
+      return product.isAvailable===true;
+    }else if(filterTextVale==='unAvailable'){
+      return product.isAvailable===false;
+    }else{
+      return product;
+    }
+  })
 // updateNewProductList(props.newProduct,...productData)
   function createProduct(product){
     console.log(product,"new Product")
@@ -38,10 +49,15 @@ function App() {
     // updateNewProduct(product)
     updateNewProductList([product,...newProductList])
   }
+  function onfilterValueChange(filterValue){
+    console.log(filterValue,"filetValue in app.js")
+    updateFilterTextValue(filterValue);
+  }
   return (
    <>
-   <ProductList newProduct={newProductList}></ProductList>
+   <ProductList newProduct={filterProduct}></ProductList>
    <CreateProduct createProduct={createProduct}></CreateProduct>
+   <FilterProduct filterChanged={onfilterValueChange}></FilterProduct>
    </>
   );
 }
