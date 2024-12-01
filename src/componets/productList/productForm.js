@@ -64,6 +64,7 @@ function ProductForm(props){
                 <input type='file' className="form-control" value={img} onChange={imageInputHandler} id='select-image'/>
             </div>
             <button type='submit'>ADD Product</button>
+            <button type="button">Cancel</button>
         </form>
     )
 }
