@@ -9,25 +9,29 @@ let productData=[
      pid:1,
      name:'product 1',
      des:'descrtiopiton 1',
-     isAvailable:true
+     isAvailable:true,
+     price:200,
   },
   {
      pid:2,
      name:'product 2',
      des:'descrtiopiton 2',
-     isAvailable:true
+     isAvailable:true,
+     price:500,
   },
   {
      pid:3,
      name:'product 3',
      des:'descrtiopiton 3',
-     isAvailable:true
+     isAvailable:true,
+     price:800,
   },
   {
      pid:4,
      name:'product 4',
      des:'descrtiopiton 4',
-     isAvailable:false
+     isAvailable:false,
+     price:500,
   }
 ]
 function App() {
